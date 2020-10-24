@@ -21,13 +21,11 @@ while (ot < 100):
         x = r.randint(1,10)
         rolls.append(x)
         time.append(t)
-       # print (x)
         t += 1
-
     count = 1
+    
     while count < 11:
         totalrolls.append(rolls.count(count))
-        #print ('There are ' + str(rolls.count(count)) + ' ' + str(count) + 's' )
         count += 1
     ot += 1
 
@@ -52,7 +50,7 @@ for row in range(2):
                           'Mean: ' + str(stat.mean(totalrolls[(row * 5 + col)::10])) + '±' + str(round(stat.stdev(totalrolls[(row * 5 + col)::10]), 2)),
                           color="black",
                           fontsize=10)
-        #print('row ' + str(row) + 'col ' +str(col) + 'count '+ str(row * 5 + col))
+
         ax[row, col].set_title('For a roll of ' + str(row * 5 + col + 1))
         ax[row, col].set_xlabel('Trial #')
         ax[row, col].set_ylabel('Total Hits')
